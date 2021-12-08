@@ -33,21 +33,29 @@ def wordInfoGetText(url):
 #wordInfoGetText('https://www.englishprofile.org/british-english/words/detail/950')  # clear
 
 
-categ = set()
 
 def wordDescription(url):
-    global categ
     r = requests.get(url)
     bp = BeautifulSoup(r.text, 'html.parser')
     content = bp.find_all('div', {'class': "evp_details"})[1]
     partOfSpeech = None
-    for current in content.div.find_all(recursive=False):
-        if current['class'][0] == 'pos_header':  # new part of speech
-        categ.add(current['class'][0])
+    word = content.find('span', {'class': 'headword'}).get_text()
+    print(word)
+    # content.div.find_all(recursive=False) iterate through childs
+    for current in content:
+        #print(current['class'][0])
+        if current['class'][0] == 'pos_section':  # new part of speech
+            partOfSpeech = current.find('span', {'class': 'pos'}).get_text()
+            print(partOfSpeech)
+    print()
 
 
-wordDescription('https://www.englishprofile.org/british-english/words/detail/2495')  # get
 
+wordDescription('https://www.englishprofile.org/british-english/words/detail/950')  # get
+
+for i in range(0):
+    num = randint(1, 1000)
+    wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(num))
 
 #wordDescription('https://www.englishprofile.org/british-english/words/detail/2495')  # get
 

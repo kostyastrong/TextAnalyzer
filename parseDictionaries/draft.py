@@ -23,7 +23,7 @@ print(s.split('d'))
 
 categ = set()
 
-def wordDescription(url):
+def categFounder(url):
     global categ
     r = requests.get(url)
     bp = BeautifulSoup(r.text, 'html.parser')
@@ -32,10 +32,10 @@ def wordDescription(url):
         categ.add(current['class'][0])
 
 
-wordDescription('https://www.englishprofile.org/british-english/words/detail/2495')  # get
+categFounder('https://www.englishprofile.org/british-english/words/detail/2495')  # get
 
 for i in range(100):
     num = randint(1, 1000)
-    wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(num))
+    categFounder('https://www.englishprofile.org/british-english/words/detail/' + str(num))
 
 print(categ)  # {'wordfam', 'info', 'pos_header'}
