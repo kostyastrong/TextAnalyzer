@@ -60,8 +60,32 @@ def getLabel(block, found = False):
         pass
     return label
 
+def extractShort(short):
+    start = short.find('(')
+    finish = short.find(')', start)
+    if start == -1 or finish == -1:
+        return short, None
+
+    return clearWord(short[:start]), clearWord(short[start + 1:finish])
+
+def infoSense(instance, genLabel):
+    dirty = instance.find('div', {'class': 'sense_title'}).get_text()
+    short, hint = extractShort(dirty)
+    curLabel = getLabel(instance)
+    if curLabel is None: curLabel = genLabel
+
+    #print(short, hint)
+
+    lvl = instance.find('span', {'class': 'label'}).get_text().strip()
+    definition = clearWord(instance.find('span', {'class': 'definition'}).get_text())
+    examples = list(clearWord(i.get_text()) for i in instance.find_all('p', {'class': 'blockquote'}))
+    # print(lvl)
+    # print(definition)
+    # print(*examples)
+    # print()
+    return short, hint, lvl, curLabel, definition, examples
+
 def wordDescription(url):
-    ret = dict()
 
     r = requests.get(url)
     bp = BeautifulSoup(r.text, 'html.parser')
@@ -74,12 +98,25 @@ def wordDescription(url):
     word = content.find('span', {'class': 'headword'}).get_text()
 
     print(word)
+    print(len(content))
+    ind = 0
+    for tmp in content:
+        tmp = BeautifulSoup(str(tmp), 'html.parser')
+        if clearWord(tmp.get_text()) == '':continue
+        ind += 1
+        print(*tmp.find_all('div'))
+        print(ind)
+        print('x:)')
     # content.div.find_all(recursive=False) iterate through childs
+    ret = []
+    ind = 0
     i = 0
     for tmp in content:
         print(i)
         i+=1
         current = BeautifulSoup(str(tmp),"html.parser")
+        textblock = clearWord(current.get_text())
+        if len(textblock) == 0: continue
         if not current.find('div', {'class': 'pos_section'}) is None:
             print('abobus')
             partOfSpeech = current.find('span', {'class': 'pos'}).get_text()
@@ -96,14 +133,27 @@ def wordDescription(url):
                     for j in examples:
                         family[j] = [word, part]
 
-            for instance in current.find_all('div', {'class' : 'info sense'}):
-                short = instance.find('div', {'class': 'sense_title'}).get_text()
-                print(short)
-    return [ret, family]
+            for instance in current.find_all('div', {'class': 'info sense'}):
+                short, hint, lvl, curLabel, definition, examples = infoSense(instance, genLabel)
+                # print(lvl)
+                # print(definition)
+                # print(examples)
+                # print()
+                ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples]]
+                ind += 1
+        else:
+
+            short, hint, lvl, curLabel, definition, examples = infoSense(current, genLabel)
+            ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples]]
+            ind += 1
+
+    for i in ret:
+        print(i, '\n')
 
 
 
-wordDescription('https://www.englishprofile.org/british-english/words/detail/950')  # get
+
+wordDescription('https://www.englishprofile.org/british-english/words/detail/950')  # clear
 
 for i in range(0):
     num = randint(1, 1000)
