@@ -42,6 +42,13 @@ def clearWord(s: str):
         finish -= 1
     return s[start:finish + 1]
 
+def clearSentence(s: str):
+    s = s.strip()
+    finish = len(s) - 1
+    if s[-1] == ',':
+        s = s[:-1] + '.'
+    return s
+
 def clearPartOfSpeech(s: str):
     s = clearWord(s)
     s = s.lower()
@@ -55,7 +62,10 @@ def getLabel(block, found = False):
         if found:
             label = block.get_text()
         else:
-            label = block.find('span', {'class': 'posgram'}).get_text()
+            source = block.find('span', {'class' : 'grammar'})
+            if source is None:
+                source = block.find('span', {'class' : 'posgram'})
+            label = source.get_text()
     except:
         pass
     return label
@@ -78,7 +88,7 @@ def infoSense(instance, genLabel):
 
     lvl = instance.find('span', {'class': 'label'}).get_text().strip()
     definition = clearWord(instance.find('span', {'class': 'definition'}).get_text())
-    examples = list(clearWord(i.get_text()) for i in instance.find_all('p', {'class': 'blockquote'}))
+    examples = list(clearSentence(i.get_text()) for i in instance.find_all('p', {'class': 'blockquote'}))
     # print(lvl)
     # print(definition)
     # print(*examples)
@@ -97,41 +107,41 @@ def wordDescription(url):
     family = None
     word = content.find('span', {'class': 'headword'}).get_text()
 
-    print(word)
-    print(len(content))
+    # print(word)
+    # print(len(content))
     ind = 0
     for tmp in content:
         tmp = BeautifulSoup(str(tmp), 'html.parser')
         if clearWord(tmp.get_text()) == '':continue
         ind += 1
-        print(*tmp.find_all('div'))
-        print(ind)
-        print('x:)')
+        # print(*tmp.find_all('div'))
+        # print(ind)
+        # print('x:)')
     # content.div.find_all(recursive=False) iterate through childs
     ret = []
     ind = 0
     i = 0
     for tmp in content:
-        print(i)
+        #print(i)
         i+=1
         current = BeautifulSoup(str(tmp),"html.parser")
         textblock = clearWord(current.get_text())
         if len(textblock) == 0: continue
         if not current.find('div', {'class': 'pos_section'}) is None:
-            print('abobus')
+            #print('abobus')
             partOfSpeech = current.find('span', {'class': 'pos'}).get_text()
             transcription = current.find('span', {'class' : 'written'}).get_text()
             genLabel = getLabel(current)
 
             wordsFam = current.find('div', {'class': 'wordfam'})
             if not wordsFam is None and family is None:
-                family = dict()
+                family = []
                 for group in wordsFam.find_all('div', {'class' : 'wf_pos_block'}):
                     part = clearWord(group.find('span', {'class': 'wf_pos'}).get_text())
                     part = clearPartOfSpeech(part)
-                    examples = list(clearWord(i.get_text()) for i in group.find_all('span', {'class': 'wf_word'}))
-                    for j in examples:
-                        family[j] = [word, part]
+                    words = list(clearWord(i.get_text()) for i in group.find_all('span', {'class': 'wf_word'}))
+                    for j in words:
+                        family.append([j, word, part])
 
             for instance in current.find_all('div', {'class': 'info sense'}):
                 short, hint, lvl, curLabel, definition, examples = infoSense(instance, genLabel)
@@ -147,17 +157,38 @@ def wordDescription(url):
             ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples]]
             ind += 1
 
-    for i in ret:
-        print(i, '\n')
+    # for i in ret:
+    #     print(i, '\n')
+
+    return ret, family
 
 
+import pandas as pd
+import numpy as np
+
+wordDescription('https://www.englishprofile.org/british-english/words/detail/1')  # clear
+
+data = []
+dataAdd = []
+for i in range(1, 7):
+    i = randint(1, 1000)
+    ret, fam = wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(i))
+    data += ret
+    if fam is not None:
+        dataAdd += fam
+
+data = pd.DataFrame(np.array(data),
+                    columns = ['word', 'part_of_speech', 'transcription', 'hint', 'lvl', 'label', 'definition', 'examples'])
 
 
-wordDescription('https://www.englishprofile.org/british-english/words/detail/950')  # clear
+if len(dataAdd) != 0:
+    dataAdd = pd.DataFrame(np.array(dataAdd),
+                       columns = ['word', 'root', 'part_of_speech'])
+else:
+    dataAdd = pd.DataFrame()
 
-for i in range(0):
-    num = randint(1, 1000)
-    wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(num))
+data.to_csv('/home/maincpp/WordsFinder/parseDictionaries/CEFRdict.csv')
+dataAdd.to_csv('/home/maincpp/WordsFinder/parseDictionaries/CEFRdictAdd.csv')
 
 #wordDescription('https://www.englishprofile.org/british-english/words/detail/2495')  # get
 
