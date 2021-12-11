@@ -33,28 +33,37 @@ def wordInfoGetText(url):
 # wordInfoGetText('https://www.englishprofile.org/british-english/words/detail/950')  # clear
 
 def clearWord(s: str):
+    unban = set('()[]')
     s = s.strip()
     start = 0
     finish = len(s) - 1
     while start < len(s) and not s[start].isalpha():
+        if s[start] in unban:break
         start += 1
     while finish > start and not s[finish].isalpha():
+        if s[finish] in unban: break
         finish -= 1
     return s[start:finish + 1]
 
 def clearSentence(s: str):
     s = s.strip()
     finish = len(s) - 1
+    if len(s) == 0:
+        return ''
     if s[-1] == ',':
         s = s[:-1] + '.'
     return s
 
-def clearPartOfSpeech(s: str):
-    s = clearWord(s)
-    s = s.lower()
-    if s[-1] == 's':
-        s = s[:-1]
-    return s
+def clearPartOfSpeech(s: str, ind=-1):
+    try:
+        s = clearWord(s)
+        s = s.lower()
+        if s[-1] == 's':
+            s = s[:-1]
+        return s
+    except:
+        print("no part of speech:", ind)
+        return None
 
 def getLabel(block, found = False):
     label = None
@@ -71,14 +80,21 @@ def getLabel(block, found = False):
     return label
 
 def extractShort(short):
-    start = short.find('(')
-    finish = short.find(')', start)
-    if start == -1 or finish == -1:
+    short = short.strip()
+    finish = short.rfind(')')
+    if finish == -1:
         return short, None
+    for start in range(finish - 1, -1, -1):
+        if short[start] == '(':
+            break
+    sCopy = short
+    short, long = short[:start], short[start + 1:finish]
+    if long.isupper():
+        return short, long
+    else:
+        return sCopy, None
 
-    return clearWord(short[:start]), clearWord(short[start + 1:finish])
-
-def infoSense(instance, genLabel):
+def infoSense(instance, genLabel, ind=-1):
     dirty = instance.find('div', {'class': 'sense_title'}).get_text()
     short, hint = extractShort(dirty)
     curLabel = getLabel(instance)
@@ -88,14 +104,21 @@ def infoSense(instance, genLabel):
 
     lvl = instance.find('span', {'class': 'label'}).get_text().strip()
     definition = clearWord(instance.find('span', {'class': 'definition'}).get_text())
-    examples = list(clearSentence(i.get_text()) for i in instance.find_all('p', {'class': 'blockquote'}))
+    examples = []
+    for i in instance.find_all('p', {'class': 'blockquote'}):
+        example = clearSentence(i.get_text())
+        if len(example) == 0:
+            continue
+        if len(example) < 3:
+            print("strange example:", example, ind)
+        examples.append(example)
     # print(lvl)
     # print(definition)
     # print(*examples)
     # print()
     return short, hint, lvl, curLabel, definition, examples
 
-def wordDescription(url):
+def wordDescription(url, indGen=-1):
 
     r = requests.get(url)
     bp = BeautifulSoup(r.text, 'html.parser')
@@ -128,7 +151,9 @@ def wordDescription(url):
         textblock = clearWord(current.get_text())
         if len(textblock) == 0: continue
         if not current.find('div', {'class': 'pos_section'}) is None:
-            #print('abobus')
+            #the site consists of div pos_secion, info sense, wordfam
+            #each time we meet pos_section means new part of speech
+            #each pos_section has different info_sense inside + some outside, for some reason
             partOfSpeech = current.find('span', {'class': 'pos'}).get_text()
             transcription = current.find('span', {'class' : 'written'}).get_text()
             genLabel = getLabel(current)
@@ -149,12 +174,12 @@ def wordDescription(url):
                 # print(definition)
                 # print(examples)
                 # print()
-                ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples]]
+                ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples, indGen, word]]
                 ind += 1
         else:
 
             short, hint, lvl, curLabel, definition, examples = infoSense(current, genLabel)
-            ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples]]
+            ret += [[short, partOfSpeech, transcription, hint, lvl, curLabel, definition, examples, indGen, word]]
             ind += 1
 
     # for i in ret:
@@ -166,19 +191,21 @@ def wordDescription(url):
 import pandas as pd
 import numpy as np
 
-wordDescription('https://www.englishprofile.org/british-english/words/detail/1')  # clear
+wordDescription('https://www.englishprofile.org/british-english/words/detail/2298')  # clear
 
 data = []
 dataAdd = []
-for i in range(1, 7):
-    i = randint(1, 1000)
-    ret, fam = wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(i))
+for i in range(1, 6750):
+    if i % 500 == 0:
+        print(i)
+    ret, fam = wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(i), i)
     data += ret
     if fam is not None:
         dataAdd += fam
 
 data = pd.DataFrame(np.array(data),
-                    columns = ['word', 'part_of_speech', 'transcription', 'hint', 'lvl', 'label', 'definition', 'examples'])
+                    columns = ['word', 'part_of_speech', 'transcription', 'hint', 'lvl', 'label', 'definition', 'examples',
+                               'order_num', 'root_word'])
 
 
 if len(dataAdd) != 0:
