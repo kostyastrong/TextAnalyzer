@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -9,6 +9,10 @@ def main():
 
 @app.route("/view")
 def viewer():
+    name = request.args["name"]
+    begin = request.args["begin"]
+    print(name, begin)
     return render_template("/viewer.html")
 
-app.run()
+
+app.run(debug=True, port=5000)
