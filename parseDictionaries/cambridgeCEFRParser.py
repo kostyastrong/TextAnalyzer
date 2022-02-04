@@ -196,12 +196,15 @@ wordDescription('https://www.englishprofile.org/british-english/words/detail/229
 data = []
 dataAdd = []
 for i in range(1, 6750):
-    if i % 500 == 0:
-        print(i)
-    ret, fam = wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(i), i)
-    data += ret
-    if fam is not None:
-        dataAdd += fam
+    try:
+        if i % 500 == 0:
+            print(i)
+        ret, fam = wordDescription('https://www.englishprofile.org/british-english/words/detail/' + str(i), i)
+        data += ret
+        if fam is not None:
+            dataAdd += fam
+    except:
+        print('error on:', i)  # currently no errors
 
 data = pd.DataFrame(np.array(data),
                     columns = ['word', 'part_of_speech', 'transcription', 'hint', 'lvl', 'label', 'definition', 'examples',
