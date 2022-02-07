@@ -24,8 +24,8 @@
     />
 
     <!-- Custom styles for this template-->
-    <link href="static/css/sb-admin-2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/extraRules" />
+    <link href="/static/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/extraRules.css" />
   </head>
 
   <body id="page-top">
@@ -43,10 +43,10 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="#">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Recent Books</span></a
-          >
+            <span></span
+          ></a>
         </li>
 
         <!-- Divider -->
@@ -493,7 +493,7 @@
             <!-- Content Row -->
             <div class="row">
               <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-2 col-md-2 mb-4">
+              <div class="col-xl-3 col-md-3 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
                   <div class="card-body recent-book">
                     <div class="row no-gutters align-items-center">
@@ -529,24 +529,20 @@
               </div>
 
               <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-2 col-md-2 mb-4">
+              <div class="col-xl-3 col-md-3 mb-4">
                 <div class="card border-left-success shadow h-100 py-2">
-                  <div class="card-body">
+                  <div class="book-cell">
                     <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div
-                          class="text-xs font-weight-bold text-success text-uppercase mb-1"
-                        >
-                          Earnings (Annual)
-                        </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-                          $215,000 asdasd asdasdasdasd
-                          <p></p>
-                          asdasdasd
-                        </div>
+                      <div class="col mr-1">
+                        <div class="text-xs book-autor mb-1">Leo Tolstoy</div>
+                        <div class="h5 mb-2 book-title">War and Peace</div>
                       </div>
-                      <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      <div class="mr-1">
+                        <img
+                          src="static/sources/WarAndPeaceCover.jpg"
+                          alt="WarAndPeaceCover"
+                          height="150"
+                        />
                       </div>
                     </div>
                   </div>
@@ -554,7 +550,7 @@
               </div>
 
               <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-2 col-md-6 mb-4">
+              <div class="col-xl-3 col-md-3 mb-4">
                 <div class="card border-left-info shadow h-100 py-2">
                   <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -590,29 +586,32 @@
               </div>
 
               <!-- Pending Requests Card Example -->
-              <div class="col-xl-2 col-md-6 mb-4">
+              <div class="col-xl-3 col-md-3 mb-4">
                 <div class="card border-left-warning shadow h-100 py-2">
-                  <div class="card-body">
+                  <div class="book-cell">
                     <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div
-                          class="text-xs font-weight-bold text-warning text-uppercase mb-1"
-                        >
-                          Pending Requests
+                      <div class="col mr-1">
+                        <div class="text-xs book-autor mb-1">
+                          William Francis Patrick Napier
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-                          18
+                        <div class="h5 mb-2 book-title">
+                          History of the War/History of the War in the Peninsula
+                          and the South of France from the year 1807
                         </div>
                       </div>
-                      <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      <div class="mr-1">
+                        <img
+                          src="/static/sources/History of the War/History of the War in the Peninsula and the South of France from the year 1807.jpg"
+                          alt="History of the War"
+                          height="150"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-xl-2 col-md-6 mb-4">
+              <div class="col-xl-3 col-md-3 mb-4">
                 <div class="card border-left-warning shadow h-100 py-2">
                   <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -634,6 +633,11 @@
                 </div>
               </div>
             </div>
+
+            <img
+              src="static/sources/WarAndPeaceCover.jpg"
+              alt="WarAndPeaceCover"
+            />
 
             <!-- Content Row -->
 
