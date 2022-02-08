@@ -1,0 +1,22 @@
+.recent-book {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 2.25rem;
+}
+
+.book-title {
+  font-weight: 500 !important;
+  color: #4c4c4d;
+}
+
+.book-author {
+  font-weight: 200;
+  color: 79797a;
+  text-transform: uppercase;
+}
+
+.book-cell {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.25rem;
+}
