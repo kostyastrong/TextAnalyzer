@@ -21,6 +21,16 @@
   padding: 0.25rem;
 }
 
+
+
+.card:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.card:hover .book-author {
+  color:brown
+}
+
 .percent-read {
   text-align: center;
   vertical-align: middle;
