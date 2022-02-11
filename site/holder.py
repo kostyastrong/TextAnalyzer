@@ -14,5 +14,11 @@ def viewer():
     print(name, begin)
     return render_template("/viewer.html")
 
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('/404.html'), 404
+
 a = 5
 app.run(debug=True, port=5000)
