@@ -20,3 +20,35 @@
   min-height: 1px;
   padding: 0.25rem;
 }
+
+
+
+.card:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.card:hover .book-author {
+  color:brown
+}
+
+.percent-read {
+  text-align: center;
+  vertical-align: middle;
+  color: #4c4c4d7e;
+}
+
+.book-img-wrapper {
+  position: relative;
+}
+
+.book-img-wrapper img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.book-img-set {
+  height: "150";
+  width: "100";
+  style: "vertical-align: bottom; object-fit: cover;";
+}
