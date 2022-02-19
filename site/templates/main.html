@@ -532,7 +532,7 @@
                         <div class="text-xs book-author mb-1">Leo Tolstoy</div>
                         <div class="h5 mb-2 book-title">War and Peace</div>
                       </div>
-                      <div class="mr-1">
+                      <div class="mr-1" id="2ndBook">
                         <img
                           src="static/sources/WarAndPeaceCover.jpg"
                           alt="WarAndPeaceCover"
@@ -608,6 +608,7 @@
                   </div>
                 </div>
               </div>
+              <script></script>
 
             <!-- Content Row -->
 
@@ -698,6 +699,7 @@
     <script src="static/js/demo/chart-pie-demo.js"></script>
 
     <!-- Adding features-->
-    <script src="/static/js/mainPage.js"></script>
+    <script src="/static/epub.js-master"></script>
+    <script src="/static/js/mainPage.js">renderCover("2ndBook", "/static/sources/WarAndPeaceImg.epub")</script>
   </body>
 </html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">
+<head>
+<meta name="dtb:uid" content="9781481423380"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle>
+<text>Spaced Out</text>
+</docTitle>
+<navMap>
+<navPoint id="navpoint_1" playOrder="1">
+<navLabel>
+<text>Cover</text>
+</navLabel>
+<content src="xhtml/cover.html"/>
+</navPoint>
+<navPoint id="navpoint_2" playOrder="2">
+<navLabel>
+<text>Dedication</text>
+</navLabel>
+<content src="xhtml/ded.html"/>
+</navPoint>
+<navPoint id="navpoint_3" playOrder="3">
+<navLabel>
+<text>Acknowledgments</text>
+</navLabel>
+<content src="xhtml/ack.html"/>
+</navPoint>
+    <navPoint id="navpoint_4" playOrder="4">
+        <navLabel>
+            <text>Moon Base Alpha Resident Directory</text>
+        </navLabel>
+        <content src="xhtml/directory.html"/>
+    </navPoint>
+<navPoint id="navpoint_5" playOrder="5">
+<navLabel>
+<text>1. Extraterrestrial Movie Night</text>
+</navLabel>
+<content src="xhtml/ch01a.html"/>
+</navPoint>
+<navPoint id="navpoint_6" playOrder="6">
+<navLabel>
+<text>2. Self-Defense With Plumbing</text>
+</navLabel>
+<content src="xhtml/ch02a.html"/>
+</navPoint>
+<navPoint id="navpoint_7" playOrder="7">
+<navLabel>
+<text>3. The Space Toilet Incident Investigation</text>
+</navLabel>
+<content src="xhtml/ch03a.html"/>
+</navPoint>
+<navPoint id="navpoint_8" playOrder="8">
+<navLabel>
+<text>4. Malicious Blueberries</text>
+</navLabel>
+<content src="xhtml/ch04a.html"/>
+</navPoint>
+<navPoint id="navpoint_9" playOrder="9">
+<navLabel>
+<text>5. Stealing Juliet</text>
+</navLabel>
+<content src="xhtml/ch05a.html"/>
+</navPoint>
+<navPoint id="navpoint_10" playOrder="10">
+<navLabel>
+<text>6. Fruitless Searching</text>
+</navLabel>
+<content src="xhtml/ch06a.html"/>
+</navPoint>
+<navPoint id="navpoint_11" playOrder="11">
+<navLabel>
+<text>7. Dire Warning</text>
+</navLabel>
+<content src="xhtml/ch07a.html"/>
+</navPoint>
+<navPoint id="navpoint_12" playOrder="12">
+<navLabel>
+<text>8. Dead Ends</text>
+</navLabel>
+<content src="xhtml/ch08a.html"/>
+</navPoint>
+<navPoint id="navpoint_13" playOrder="13">
+<navLabel>
+<text>9. Sentient Nanobots</text>
+</navLabel>
+<content src="xhtml/ch09a.html"/>
+</navPoint>
+<navPoint id="navpoint_14" playOrder="14">
+<navLabel>
+<text>10. Breaking and Entering</text>
+</navLabel>
+<content src="xhtml/ch10a.html"/>
+</navPoint>
+<navPoint id="navpoint_15" playOrder="15">
+<navLabel>
+<text>11. Illegal Contraband</text>
+</navLabel>
+<content src="xhtml/ch11a.html"/>
+</navPoint>
+<navPoint id="navpoint_16" playOrder="16">
+<navLabel>
+<text>12. Space Jerk Rebellion</text>
+</navLabel>
+<content src="xhtml/ch12a.html"/>
+</navPoint>
+<navPoint id="navpoint_17" playOrder="17">
+<navLabel>
+<text>13. Desperate Times</text>
+</navLabel>
+<content src="xhtml/ch13a.html"/>
+</navPoint>
+<navPoint id="navpoint_18" playOrder="18">
+<navLabel>
+<text>14. Moonlight Ride</text>
+</navLabel>
+<content src="xhtml/ch14a.html"/>
+</navPoint>
+<navPoint id="navpoint_19" playOrder="19">
+<navLabel>
+<text>15. Death From Above</text>
+</navLabel>
+<content src="xhtml/ch15a.html"/>
+</navPoint>
+<navPoint id="navpoint_20" playOrder="20">
+<navLabel>
+<text>16. Video Transmission</text>
+</navLabel>
+<content src="xhtml/ch16a.html"/>
+</navPoint>
+<navPoint id="navpoint_21" playOrder="21">
+<navLabel>
+<text>17. Frayed Nerves</text>
+</navLabel>
+<content src="xhtml/ch17a.html"/>
+</navPoint>
+<navPoint id="navpoint_22" playOrder="22">
+<navLabel>
+<text>18. Hypothetical Space Snakes</text>
+</navLabel>
+<content src="xhtml/ch18a.html"/>
+</navPoint>
+<navPoint id="navpoint_23" playOrder="23">
+<navLabel>
+<text>19. Imaginary Friends</text>
+</navLabel>
+<content src="xhtml/ch19a.html"/>
+</navPoint>
+<navPoint id="navpoint_24" playOrder="24">
+<navLabel>
+<text>20. Big Revelation</text>
+</navLabel>
+<content src="xhtml/ch20a.html"/>
+</navPoint>
+<navPoint id="navpoint_25" playOrder="25">
+<navLabel>
+<text>21. Racing the Clock</text>
+</navLabel>
+<content src="xhtml/ch21a.html"/>
+</navPoint>
+<navPoint id="navpoint_26" playOrder="26">
+<navLabel>
+<text>22. Secret Identity</text>
+</navLabel>
+<content src="xhtml/ch22a.html"/>
+</navPoint>
+<navPoint id="navpoint_27" playOrder="27">
+<navLabel>
+<text>23. The Asteroid</text>
+</navLabel>
+<content src="xhtml/ch23a.html"/>
+</navPoint>
+<navPoint id="navpoint_28" playOrder="28">
+<navLabel>
+<text>Moon Base Map</text>
+</navLabel>
+<content src="xhtml/endpaper.html"/>
+</navPoint>
+<navPoint id="navpoint_29" playOrder="29">
+<navLabel>
+<text>About Stuart Gibbs</text>
+</navLabel>
+<content src="xhtml/authorbio.html"/>
+</navPoint>
+<navPoint id="navpoint_30" playOrder="30">
+<navLabel>
+<text>Copyright</text>
+</navLabel>
+<content src="xhtml/copy.html"/>
+</navPoint>
+</navMap>
+</ncx>

@@ -1,0 +1,618 @@
+@font-face
+{
+	font-family: "BrandonReg";
+	src: url(../fonts/BrandonGrotesque-Regular.otf);
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "BrandonReg";
+	src: url(../fonts/BrandonGrotesque-Black.otf);
+	font-style: normal;
+	font-weight: bold;
+}
+@font-face
+{
+	font-family: "AvenirLTStd-Light";
+	src: url(../fonts/AvenirLTStd-Light.otf);
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "AGaramondPro";
+	src: url(../fonts/AGaramondPro-Italic.otf);
+	font-style: italic;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "AGaramondPro";
+	src: url(../fonts/AGaramondPro-Regular.otf);
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "AvenirLTStd-Black";
+	src: url(../fonts/AvenirLTStd-Black.otf);
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "AvenirLTStd-Heavy";
+	src: url(../fonts/AvenirLTStd-HeavyOblique.otf);
+	font-style: italic;
+	font-weight: bold;
+}
+@font-face
+{
+	font-family: "AvenirLTStd-Medium";
+	src: url(../fonts/AvenirLTStd-Medium.otf);
+	font-style: normal;
+	font-weight: bold;
+}
+@font-face
+{
+	font-family: "AvenirLTStd";
+	src: url(../fonts/AvenirLTStd-Oblique.otf);
+	font-style: italic;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "AvenirLTStd";
+	src: url(../fonts/AvenirLTStd-Roman.otf);
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: "MemphisLTStd";
+	src: url(../fonts/MemphisLTStd-Bold.otf);
+	font-style: normal;
+	font-weight: bold;
+}
+@font-face
+{
+	font-family: "MemphisLTStd";
+	src: url(../fonts/MemphisLTStd-BoldItalic.otf);
+	font-style: italic;
+	font-weight: bold;
+}
+@page
+{
+	margin: 1.2em;
+}
+body
+{
+	text-align: justify;
+	orphans: 2;
+	margin: 0em;
+	widows: 2;
+}
+.noindent
+{
+	font-family: "AGaramondPro";
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+}
+.noindent-f
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+}
+.noindent-fb
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-indent: 0em;
+}
+.noindent-t
+{
+	font-family: "AvenirLTStd-Black";
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+.noindent-tb
+{
+	font-family: "AvenirLTStd-Black";
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+}
+.noindent-fa
+{
+	font-family: "AvenirLTStd";
+	margin-top: 5%;
+	font-size: 0.8em;
+	margin-bottom: 2em;
+	text-indent: 0em;
+	text-align: left;
+}
+.indent
+{
+	font-family: "AGaramondPro";
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: 1.2em;
+}
+.indent-f
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: 1.2em;
+}
+.indent-fb
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-indent: 1.2em;
+}
+.copy
+{
+	font-family: "AGaramondPro";
+	font-size: 0.8em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+	text-align: left;
+}
+.copya
+{
+	margin-top: 5%;
+	margin-bottom: 0.3em;
+	text-indent: 0em;
+	text-align: left;
+}
+.also
+{
+	font-family: "MemphisLTStd";
+	margin-top: 0.2em;
+	margin-bottom: 0em;
+	font-size: 1.4em;
+	text-align: center;
+}
+.alsot
+{
+	font-family: "MemphisLTStd";
+	margin-top: 1.5em;
+	margin-bottom: 0em;
+	font-size: 1.4em;
+	text-align: center;
+}
+.also1
+{
+	font-family: "MemphisLTStd";
+	margin-top: 2em;
+	margin-bottom: 0em;
+	font-size: 1.1em;
+	text-align: center;
+}
+.alsoa
+{
+	font-family: "MemphisLTStd";
+	margin-top: 10%;
+	margin-bottom: 0em;
+	font-size: 1.2em;
+	text-align: center;
+}
+.centert
+{
+	font-family: "AvenirLTStd-Black";
+	margin-top: 5%;
+	margin-bottom: 0em;
+	text-align: center;
+}
+.ded
+{
+	font-family: "MemphisLTStd";
+	font-size: 0.9em;
+	margin-top: 15%;
+	margin-bottom: 0em;
+	text-align: center;
+}
+.cont
+{
+	font-family: "AvenirLTStd-Medium";
+	padding-left: 1.7em;
+	margin-top: 0em;
+	margin-bottom: 0.8em;
+	text-indent: -1.2em;
+	text-align: left;
+}
+.contb
+{
+	font-family: "AvenirLTStd-Medium";
+	padding-left: 1.2em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: -1.2em;
+	text-align: left;
+}
+.conta
+{
+	font-family: "AvenirLTStd-Medium";
+	padding-left: 1.2em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-indent: -1.2em;
+	text-align: left;
+}
+.cont1
+{
+	font-family: "AvenirLTStd-Medium";
+	padding-left: 1.7em;
+	margin-top: 0em;
+	margin-bottom: 0.8em;
+	text-indent: -1.7em;
+	text-align: left;
+}
+.h2
+{
+	font-family: "AvenirLTStd";
+	font-size: 1.1em;
+	font-weight: normal;
+	margin-top: 0em;
+	margin-bottom: 3em;
+	page-break-after: avoid;
+	text-align: center;
+	letter-spacing:2px;
+}
+.h2a
+{
+	font-family: "MemphisLTStd";
+	font-size: 2em;
+	font-weight: normal;
+	margin-top: 5%;
+	margin-bottom: 0.5em;
+	page-break-after: avoid;
+	text-align: center;
+}
+.subtitle
+{
+	font-family: "AvenirLTStd-Heavy";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 0.5em;
+	text-align: left;
+	text-indent: 0em;
+}
+.subtitleb
+{
+	font-family: "AvenirLTStd-Heavy";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 2em;
+	text-align: left;
+	text-indent: 0em;
+}
+.h3c
+{
+	font-family: "AvenirLTStd-Black";
+	font-size: 0.9em;
+	page-break-after: avoid;
+	font-weight: normal;
+	margin-top: 2em;
+	margin-bottom: 0em;
+	text-align: left;
+	text-indent: 0em;
+}
+.h3c1
+{
+	font-family: "AvenirLTStd-Black";
+	font-size: 0.9em;
+	page-break-after: avoid;
+	font-weight: normal;
+	margin-top: 1em;
+	margin-bottom: 0em;
+	text-align: left;
+	text-indent: 0em;
+}
+.dir
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+	text-align: left;
+}
+.imagefp
+{
+	margin: 0em;
+	height: 100%;
+	text-align: center;
+}
+span.txit
+{
+	font-style: italic;
+}
+span.txita
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	font-style: italic;
+}
+span.txbf
+{
+	font-weight: bold;
+}
+span.txbf1
+{
+	font-family: "MemphisLTStd";
+	font-weight: bold;
+}
+span.txbfit
+{
+	font-weight: bold;
+	font-style: italic;
+}
+.bull
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0.3em;
+	margin-bottom: 0em;
+	padding-left: 0.8em;
+	text-indent: -0.8em;
+}
+.bullb
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.9em;
+	margin-top: 0.3em;
+	margin-bottom: 1em;
+	padding-left: 0.8em;
+	text-indent: -0.8em;
+}
+.hr
+{
+	margin-top: 1.5em;
+	margin-bottom: 0em;
+}
+.footnote
+{
+	font-family: "AvenirLTStd-Light";
+	font-size: .8em;
+	margin-top: .8em;
+	margin-bottom: 1em;
+	text-indent: 0em;
+	text-align: left;
+}
+div.sidebar
+{
+	background-color: #E7E7E7;
+	border: 1px solid #E7E7E7;
+	padding: .49em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	margin-left: .3em;
+	margin-right: .3em;
+}
+sup.sup
+{
+	font-size: .75em;
+	vertical-align: top;
+}
+span.smallcaps
+{
+	font-size: 0.8em;
+}
+.image
+{
+	margin-top: 5%;
+	margin-bottom: 1em;
+	text-align: center;
+}
+span.fonta
+{
+	font-family: "AvenirLTStd-Medium";
+	font-size: 1.6em;
+	line-height: 0em;
+	color: #F7A221;
+}
+.ipadfp
+{
+	margin: 0em;
+	height: 98vh;
+	text-align: center;
+}
+a
+{
+	text-decoration: none;
+}
+.authorbio
+{
+	font-family: "AGaramondPro";
+	margin-top: 1em;
+	margin-bottom: 2em;
+	text-indent: 0em;
+	color: ghostwhite;
+}
+div.box
+{
+	background-color: #0082C6;
+	border: 1px solid #0082C6;
+	padding: .49em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	margin-left: .3em;
+	margin-right: .3em;
+	border-radius: 1em;
+	box-shadow: .2em .3em .2em #888888;
+}
+div.box1
+{
+	background-color: #EFF3F7;
+	border: 1px solid #EFF3F7;
+	padding: .49em;
+	margin-top: 1em;
+	margin-bottom: 0em;
+	margin-left: .3em;
+	margin-right: .3em;
+}
+.simon1
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.8em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+	color: ghostwhite;
+}
+.simon
+{
+	font-family: "AvenirLTStd";
+	font-size: 0.8em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+	color: ghostwhite;
+}
+.hr1
+{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	margin-left: 15%;
+	margin-right: 15%;
+	background-color: ghostwhite;
+	height: 1px;
+}
+.visit
+{
+	font-family: "AvenirLTStd-Black";
+	font-size: 0.9em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+}
+.color
+{
+	color: #F7A221;
+}
+div.registration
+{
+	font-family: "BrandonReg";
+	font-size: 1.2em;
+	line-height: .8em;
+	border-radius: 0em 0em 1em 1em;
+	margin-top: -1em;
+	margin-bottom: 0em;
+	padding: .2em 1.2em .4em 1.2em;
+	background-color: #b3ddca;
+}
+div.registration a
+{
+	text-decoration: none;
+	color: inherit;
+}
+div.registrationtop
+{
+	font-family: "BrandonReg";
+	font-size: 1em;
+	border-radius: 1em 1em 0em 0em;
+	padding: .5em 1.5em 1em 1.5em;
+	margin: 0em 0em 0 0em;
+	background-color: #b3ddca;
+}
+.reg2
+{
+	text-align: justify;
+	line-height: 1.4em;
+	margin-top: .5em;
+	margin-bottom: 0em;
+	color: #06816b;
+}
+.reg3
+{
+	text-align: center;
+	line-height: 1.4em;
+	margin: 0em;
+	font-size: .9em
+}
+.promo
+{
+	text-align: center;
+	margin: 0em;
+	padding: .4em 0 .6em 0;
+}
+.promo1
+{
+	font-weight: bold;
+	text-align: center;
+	margin: .5em;
+	padding: .3em .1em .1em .1em;
+	background-color: #e7f6f0;
+	color: #06816b;
+	border-radius: .3em;
+	border: .1em #06816b;
+	border-style: solid double;
+	line-height: 1;
+}
+.boldpro
+{
+	font-weight: bold;
+}
+.bubblepro
+{
+	font-family: "BrandonReg";
+	border-radius: 0em 0em 1em 1em;
+	padding: .49em .49em .49em .49em;
+	margin: 0em 2em 0 2em;
+	text-align: center;
+	background-color: #40ba8d;
+	color: white;
+}
+div.bubblepro a
+{
+	text-decoration: none;
+	color: inherit;
+}
+.bubble2pro
+{
+	font-family: "BrandonReg";
+	border-radius: 0em 0em 1em 1em;
+	padding: .8em .49em 1px .49em;
+	margin: 0em 0em .5em 0em;
+	text-align: center;
+	background-color: #e7f6f0;
+	line-height: 2em;
+	color: #06816b;
+}
+.bubble1pro
+{
+	font-size: .9em;
+	line-height: 1.3em;
+	margin-bottom: 1em;
+}
+.bigreg
+{
+	font-size: 2em;
+	letter-spacing: 1px; 
+}
+.lessbigreg
+{
+	font-size: 1.5em;
+}
+.landscape
+{
+	text-align: center;
+}
+.landscape img
+{
+	width: 100%;
+}
