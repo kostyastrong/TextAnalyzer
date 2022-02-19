@@ -1,0 +1,91 @@
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+
+Hello!
+When working on a project, you are probably managing many different branches in your repository.
+
+As the number of branches grow, you may need to work on different tasks in parallel, going from one branch to another all the time.
+
+As a consequence, you may need to switch branches very frequently.
+
+In this tutorial, you are going to learn how you can switch branches easily on Git.
+
+By the end of this tutorial, you will know how you can safely commit your work in one branch, switch to another and start working on another feature.
+
+asdasdsadsa
+
+
