@@ -1,0 +1,476 @@
+/**/
+body {
+    margin-left: 10%;
+    margin-right: 5%
+    }
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    /* all headings centered */
+    clear: both;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    word-spacing: 0.2em;
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    font-weight: normal
+    }
+h1 {
+    font-size: 150%;
+    line-height: 2.5em
+    }
+h2 {
+    font-size: 130%;
+    line-height: 1.7em;
+    letter-spacing: 0.2em
+    }
+h3 {
+    font-size: 110%
+    }
+h4 {
+    font-size: 80%;
+    margin-top: 2em
+    }
+h5 {
+    font-size: 70%
+    }
+p {
+    margin-top: 0.51em;
+    text-align: justify;
+    margin-bottom: 0.49em;
+    text-indent: 1em
+    }
+.p1 {
+    margin-top: 1em
+    }
+.p2 {
+    margin-top: 2em
+    }
+.p3 {
+    margin-top: 3em
+    }
+.p4 {
+    margin-top: 4em
+    }
+.p6 {
+    margin-top: 6em
+    }
+.negin1 {
+    padding-left: 1em;
+    text-indent: -1em;
+    text-align: justify
+    }
+.noindent {
+    text-indent: 0
+    }
+.nowrap {
+    white-space: nowrap
+    }
+div.chapter {
+    page-break-before: always
+    }
+h2.nobreak {
+    page-break-before: avoid
+    }
+.pfs150 {
+    font-size: 150%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.pfs135 {
+    font-size: 135%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.pfs120 {
+    font-size: 120%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.pfs100 {
+    font-size: 100%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.pfs90 {
+    font-size: 90%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.pfs80 {
+    font-size: 80%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.pfs70 {
+    font-size: 70%;
+    text-align: center;
+    text-indent: 0;
+    word-spacing: 0.3em
+    }
+.fs50 {
+    font-size: 50%;
+    font-style: normal
+    }
+.fs60 {
+    font-size: 60%;
+    font-style: normal
+    }
+.fs70 {
+    font-size: 70%;
+    font-style: normal
+    }
+.fs80 {
+    font-size: 80%;
+    font-style: normal
+    }
+.fs90 {
+    font-size: 90%;
+    font-style: normal
+    }
+.fs100 {
+    font-size: 100%;
+    font-style: normal
+    }
+.fs120 {
+    font-size: 120%;
+    font-style: normal
+    }
+.fs135 {
+    font-size: 135%;
+    font-style: normal
+    }
+.fs150 {
+    font-size: 150%;
+    font-style: normal
+    }
+.fs180 {
+    font-size: 180%;
+    font-style: normal
+    }
+.bold {
+    font-weight: bold
+    }
+/*   for horizontal lines   */
+hr {
+    width: 33%;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    margin-left: 33.5%;
+    margin-right: 33.5%;
+    clear: both
+    }
+hr.tb {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%
+    }
+hr.chap {
+    width: 65%;
+    margin-left: 17.5%;
+    margin-right: 17.5%
+    }
+hr.r10 {
+    width: 10%;
+    margin-left: 45%;
+    margin-right: 45%
+    }
+hr.r10a {
+    width: 10%;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em
+    }
+hr.r20 {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%
+    }
+.x-ebookmaker hr.chap {
+    width: 0%;
+    display: none
+    }
+/*   for inserting info from TN and Errata changes   */
+.corr {
+    text-decoration: none;
+    border-bottom: thin dotted gray
+    }
+.x-ebookmaker .corr {
+    text-decoration: none;
+    border-bottom: none
+    }
+.err {
+    text-decoration: none;
+    border-bottom: thin dashed blue
+    }
+.x-ebookmaker .err {
+    text-decoration: none;
+    border-bottom: none
+    }
+/*   for different code on screen versus handhelds   */
+.screenonly {
+    display: block
+    }
+.x-ebookmaker .screenonly {
+    display: none
+    }
+/*   for tables   */
+table {
+    margin-left: auto;
+    margin-right: auto
+    }
+table.autotable {
+    border-collapse: collapse
+    }
+td {
+    padding: 0.18em 0.3em 0 0.3em
+    }
+.tdl {
+    text-align: left;
+    padding-left: 1.5em;
+    text-indent: -1em
+    }
+.tdr {
+    text-align: right
+    }
+.tdc {
+    text-align: center
+    }
+.tdlx {
+    text-align: justify;
+    padding-left: 1em;
+    text-indent: -1em;
+    vertical-align: top
+    }
+.tdll {
+    text-align: left;
+    padding-left: 1.5em;
+    text-indent: -1em;
+    border-left: solid thin
+    }
+.tdcl {
+    text-align: center;
+    border-left: solid thin
+    }
+.tdrl {
+    text-align: right;
+    border-left: solid thin;
+    padding-right: 0.5em
+    }
+.tdrp {
+    text-align: right;
+    padding-right: 2em
+    }
+.tdrq {
+    text-align: right;
+    padding-right: 1em
+    }
+.tdrlq {
+    text-align: right;
+    border-left: solid thin;
+    padding-right: 1em;
+    vertical-align: top
+    }
+.tdrt {
+    text-align: right;
+    vertical-align: top
+    }
+.tdrb {
+    text-align: right;
+    vertical-align: bottom
+    }
+.bt {
+    vertical-align: middle;
+    border-top: solid thin
+    }
+.bb {
+    vertical-align: middle;
+    border-bottom: solid thin
+    }
+.bl {
+    vertical-align: middle;
+    border-left: solid thin
+    }
+.br {
+    vertical-align: middle;
+    border-right: solid thin
+    }
+/*   for spacing   */
+.pad2 {
+    padding-left: 2em
+    }
+.pad3 {
+    padding-left: 3em
+    }
+.pad4 {
+    padding-left: 4em
+    }
+.pad5 {
+    padding-left: 5em
+    }
+.pad6 {
+    padding-left: 6em
+    }
+.pad8 {
+    padding-left: 8em
+    }
+.pad9 {
+    padding-left: 9em
+    }
+.pad4h {
+    padding-left: 4.5em
+    }
+.pad6h {
+    padding-left: 6.5em
+    }
+.padr2 {
+    padding-right: 2em
+    }
+.padr4 {
+    padding-right: 4em
+    }
+.pagenum {
+    /* uncomment the next line for invisible page numbers */
+    /*  visibility: hidden;  */
+    color: #A9A9A9;
+    font-size: 80%;
+    text-align: right;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-indent: 0.5em
+    }
+/*   blockquote (/# #/)    */
+.blockquotx {
+    margin: 1.5em 5% 1.5em 5%
+    }
+.blockquotx p {
+    text-indent: 0;
+    line-height: 1.8em;
+    letter-spacing: 0.03em
+    }
+/*    sidenotes    */
+.sidenote {
+    clear: right;
+    margin: 0.5em 0.3em 0 0.5em;
+    padding: 0.2em;
+    text-align: left;
+    text-indent: 0;
+    font-size: 60%;
+    color: black;
+    background: #eee;
+    border: dashed thin;
+    font-style: normal;
+    font-weight: normal
+    }
+.x-ebookmaker .sidenote {
+    float: right;
+    clear: right;
+    width: 18%
+    }
+/* general placement and presentation    */
+.center {
+    text-align: center;
+    text-indent: 0
+    }
+.right {
+    text-align: right;
+    margin-right: 1em
+    }
+.smcap {
+    font-variant: small-caps
+    }
+.allsmcap {
+    font-variant: small-caps;
+    text-transform: lowercase
+    }
+sup {
+    font-size: 60%
+    }
+sub {
+    font-size: 60%
+    }
+.lsp {
+    letter-spacing: 0.1em
+    }
+.lsp2 {
+    letter-spacing: 0.2em
+    }
+.caption {
+    font-weight: normal;
+    font-size: 70%;
+    padding-bottom: 0.5em
+    }
+/* Images */
+img {
+    border: none;
+    max-width: 100%;
+    height: auto
+    }
+img.w100 {
+    width: 100%
+    }
+.figcenter {
+    margin: auto;
+    text-align: center;
+    page-break-inside: avoid;
+    max-width: 100%
+    }
+/* Footnotes */
+.footnotes {
+    border: dashed 1px;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    padding-bottom: 1em
+    }
+.footnote {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 80%
+    }
+.footnote p {
+    text-indent: 0
+    }
+.footnote .label {
+    text-align: right
+    }
+.fnanchor {
+    vertical-align: super;
+    font-size: 0.8em;
+    text-decoration: none
+    }
+/* Transcriber's notes */
+.transnote {
+    background-color: #E6E6FA;
+    color: black;
+    font-size: smaller;
+    padding: 0.5em;
+    margin-bottom: 5em;
+    font-family: sans-serif, serif
+    }
+.transnote p {
+    text-indent: 0
+    }
+/*   custom cover  (cover.jpg)    */
+.customcover {
+    visibility: hidden;
+    display: none
+    }
+.x-ebookmaker .customcover {
+    visibility: visible;
+    display: block
+    }
+/* Illustration classes */
+.illowp70 {
+    width: 70%
+    }
+.x-ebookmaker .illowp70 {
+    width: 70%
+    }
+/**/
