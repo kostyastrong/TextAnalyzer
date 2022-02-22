@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import requests
 import mechanicalsoup
-
+import random
 
 def unsplashTenPhLinks(word: str, num=1, adblock=True):
     url = 'https://unsplash.com/s/photos/' + word
@@ -42,6 +42,18 @@ def unsplashTenPhLinks(word: str, num=1, adblock=True):
 
 #print(unsplashTenPhLinks('coat'))
 
-unsplashTenPhLinks('winter')
-for i in range(5):
-    print(unsplashTenPhLinks(input(), 2))
+#unsplashTenPhLinks('winter')
+# for i in range(5):
+#     print(unsplashTenPhLinks(input(), 2))
+
+def unsplashOnePicture(word: str):
+    url = 'https://unsplash.com/s/photos/' + word
+    enter = 'https://images.unsplash.com/'
+
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, features="html.parser")
+    pic = [img['src'] for img in soup.findAll('img') if img['src'].find(enter) != -1 and not img['src'].find(enter) is None]
+    return pic[random.randint(1, 3)]
+
+print(unsplashOnePicture(input('Word: ')))
+
