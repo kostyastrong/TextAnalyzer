@@ -7,7 +7,7 @@ import random
 class picForWord():
 
     @staticmethod
-    def gethtml(url):
+    def gethtml(url):  # to get url from secured sites
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36',
             "Upgrade-Insecure-Requests": "1", "DNT": "1",
@@ -18,7 +18,7 @@ class picForWord():
         return r.text
 
     '''seems like there are no commercial pictures among 2-4 pictures, but we only need one of them'''
-    def unsplashOnePicture(self):
+    def unsplashOnePicture(self):  # a non-advertising picture from unsplash
         word = self.word
         url = 'https://unsplash.com/s/photos/' + word
         enter = 'https://images.unsplash.com/'
@@ -32,7 +32,7 @@ class picForWord():
     '''Unlike Oxford, cambridge shows a lot of pictures on its page: 
         different meaning of words (search for "Box") or quizzes and logos'''
 
-    def cambridgePic(self):
+    def cambridgePic(self):  # be careful, there are diff pic for diff meanings: a "box" for ex has 5 pictures
         word = self.word
         url = 'https://dictionary.cambridge.org/dictionary/english/' + word
         soup = BeautifulSoup(picForWord.gethtml(url), features="html.parser")
@@ -75,7 +75,7 @@ class picForWord():
 
 '''check the winter.txt and the allwinter.txt files with "Supported" marks. 
     These marks are in the end of the html page, so it's difficult to get whether photo is commercial or normal.'''
-def unsplashTenPhLinks(word: str, num=1, adblock=True):  # it was supposed to be with an adblocker, but for now, it's hard
+def unsplashTenPhLinks(word: str, num=1, adblock=True):  # it was supposed to be with an adblocker, but for now, it's hard to make
     url = 'https://unsplash.com/s/photos/' + word
     enter = 'https://images.unsplash.com/'
 

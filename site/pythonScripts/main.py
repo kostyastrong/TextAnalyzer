@@ -21,6 +21,8 @@ namespaces = {
 }
 
 
+# source - https://alamot.github.io/epub_cover/
+
 def insideCoverPath(epub_path):
     '''by definition'''
 
