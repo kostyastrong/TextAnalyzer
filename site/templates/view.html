@@ -26,6 +26,7 @@
     <!-- Custom styles for this template-->
     <link href="/static/css/sb-admin-2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/css/extraRules.css" />
+    <link href="/static/css/reading-text.css" rel="stylesheet" />
   </head>
 
   <body id="page-top">  <!-- Page Wrapper -->
@@ -329,11 +330,91 @@
           <!-- End of Topbar -->
 
           <!-- Begin Page Content -->
-          <div class="container" id="text_maker">
-            <span><text style="font-size: 20px;">sasdsad</text></span>
+          <div id="textOfBook">
+          </div>
+          <br>
+          <textarea id="input-text-field"
+          rows="5" cols="33"
+          placeholder="Field for your text"
+          >some text to work with
+          </textarea>
+          <button id="gettext">Ready</button>
+          <script>
+            document.getElementById('gettext').addEventListener('click', textToSpan);
+            var mydiv = document.getElementById("textOfBook");
+
+            function isLetter(str) {
+              return str.length === 1 && str.match(/[a-zA-Z']/i);
+            }
+
+            function wordToSpans(word) {  // upper-intermediate -> upper, -, intermediate
+              var ret = [];
+              var span = document.createElement('span');
+              var lWord = false;
+              for (var i = 0; i < word.length; ++i) {
+                if (isLetter(word[i])) {
+                  if (!lWord) {  // prev. char is alphabet
+                    span = document.createElement('span');  // new word
+                    lWord = true;
+                  }
+                  span.innerHTML += word[i];  
+                } else {
+                  if (lWord) {
+                    ret.push(span);
+                    lWord = false;
+                  }
+                  ret.push(word[i]);
+                }
+              }
+              if (lWord) {  // no punctuation in the end
+                ret.push(span);
+              }
+              return ret;
+            }
+
+            function isObject(val) {
+              if (val === null) { return false;}
+              return ( (typeof val === 'function') || (typeof val === 'object') );
+            }
+
+            function textToSpan() {
+              mydiv.innerHTML = "";
+              var txt = $("#input-text-field").val();
+              txt = txt.replace(/\r?\n+/g, '\n');  // making a lot of enters to one
+              txt = txt.replace(/\r? +/g, ' ');  // same with spaces
+              //txt = txt.split(/[^A-Za-z]/);
+              txt = txt.split(' ');
+              var id = 0;
+              //debugger;
+              var p = document.createElement('p');  // text is devided into paragraphs
+              for (var i=0; i < txt.length; ++i) {
+                var cur = txt[i].split('\n');  // this is for starting a paragraph
+                for (var j = 0; j < cur.length; ++j) {
+                  if (cur[j].length == 0) continue;  
+                  var rem = wordToSpans(cur[j]);  // non-linear now as 2 spans, not one
+                  // I've done it this way, because-you see, we never really know what '-' is 
+                  for (var word = 0; word < rem.length; ++word) {
+                    if (isObject(rem[word])) {
+                      p.appendChild(rem[word]);  // words
+                    } else
+                      p.innerHTML += rem[word];  // punctuation
+                  }
+                  if (j < cur.length - 1) {
+                    mydiv.appendChild(p);
+                    p = document.createElement('p');  // new paragraph object
+                  }
+                }
+              }
+              if (p.innerHTML.length > 0) {
+                mydiv.appendChild(p);
+              }
+            }
+          </script>
+
+
+          
           
           <!-- /.container-fluid -->
-            </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->

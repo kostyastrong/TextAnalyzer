@@ -23,7 +23,7 @@ $.ajax({
     data: getCookie("current"),
     dataType: 'text',
     success: function(data) {
-      var mydiv = document.getElementById("text_maker");
+      var mydiv = document.getElementById("textOfBook");
       
       var txt = data.replace(/\r?\n/g, ' '); 
       txt = txt.split(' ');
